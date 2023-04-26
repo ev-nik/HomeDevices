@@ -15,5 +15,6 @@ public:
     bool leak;
 
     void deviced() override;
+    void infoDetector();
 };
 #endif // LEAKDETECTOR_H

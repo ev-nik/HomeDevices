@@ -15,5 +15,6 @@ public:
     int temperature;
 
     void deviced() override;
+    void infoDetector();
 };
 #endif // TEMPERATUREDETECTOR_H

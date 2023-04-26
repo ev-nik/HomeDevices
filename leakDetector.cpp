@@ -14,3 +14,8 @@ void LeakDetector::deviced()
 
     std::cout << "leak -> " << leak << '\n';
 }
+
+void LeakDetector::infoDetector()
+{
+    std::cout << "leak == " << leak << '\n';
+}

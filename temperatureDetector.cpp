@@ -14,3 +14,8 @@ void TemperatureDetector::deviced()
 
     std::cout << "temperature = " << temperature << '\n';
 }
+
+void TemperatureDetector::infoDetector()
+{
+    std::cout << "Temperature == " << temperature << " C" << '\n';
+}

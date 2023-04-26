@@ -15,5 +15,6 @@ public:
     int smokeLevel;
 
     void deviced() override;
+    void infoDetector();
 };
 #endif // SMOKE_DETECTOR_H

@@ -15,5 +15,6 @@ public:
     int  chargeBattery;
 
     virtual void deviced();
+    virtual void infoDetector() = 0;
 };
 #endif // DEVICE_H

@@ -14,3 +14,8 @@ void SmokeDetector::deviced()
 
     std::cout << "smoke level ->" << smokeLevel << '\n';
 }
+
+void SmokeDetector::infoDetector()
+{
+    std::cout << "Smoke level == " << smokeLevel << " %" << '\n';
+}

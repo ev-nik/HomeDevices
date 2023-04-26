@@ -10,15 +10,18 @@
 void checkDetector(Device& d)
 {
     d.deviced();
+    d.infoDetector();
 }
 
 int main()
 {
-    Device ris;
-    ris.name = "risik";
-    ris.address = "1st street";
-    ris.isConnect = true;
-    ris.chargeBattery = 15;
+    //Нельзя создать объект абстрактного класса
+    // (т.к. в нем есть чисто виртуальная функция)
+//    Device ris;
+//    ris.name = "risik";
+//    ris.address = "1st street";
+//    ris.isConnect = true;
+//    ris.chargeBattery = 15;
 
 
     LeakDetector leake;
@@ -33,7 +36,7 @@ int main()
     TemperatureDetector temp;
     temp.name = "temp";
 
-    checkDetector(ris);
+//    checkDetector(ris);
     std::cout << "-------------------\n";
     checkDetector(leake);
     std::cout << "-------------------\n";
