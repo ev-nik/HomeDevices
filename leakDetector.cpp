@@ -6,6 +6,7 @@
 LeakDetector::LeakDetector()
 {
     leak = false;
+
 }
 
 void LeakDetector::deviced()
@@ -19,3 +20,7 @@ void LeakDetector::infoDetector()
 {
     std::cout << "leak == " << leak << '\n';
 }
+
+
+
+

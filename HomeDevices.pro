@@ -13,10 +13,12 @@ SOURCES += main.cpp \
     device.cpp \
     leakDetector.cpp \
     temperatureDetector.cpp \
-    smokeDetector.cpp
+    smokeDetector.cpp \
+    home.cpp
 
 HEADERS += \
     device.h \
     smokeDetector.h \
     leakDetector.h \
-    temperatureDetector.h
+    temperatureDetector.h \
+    home.h

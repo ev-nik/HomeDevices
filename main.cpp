@@ -5,13 +5,15 @@
 #include "leakDetector.h"
 #include "smokeDetector.h"
 #include "temperatureDetector.h"
+#include "home.h"
 
 // Опросить датчик
-void checkDetector(Device& d)
+void checkDetector(Device* d)
 {
-    d.deviced();
-    d.infoDetector();
+    d->deviced();
+    d->infoDetector();
 }
+
 
 int main()
 {
@@ -24,25 +26,34 @@ int main()
 //    ris.chargeBattery = 15;
 
 
-    LeakDetector leake;
-    leake.name = "leake";
-    leake.leak = false;
+//    LeakDetector* leake = new LeakDetector;
+//    leake->name = "leake";
+//    leake->leak = false;
 
 
-    SmokeDetector smoky;
-    smoky.name = "smoky";
-    smoky.smokeLevel = 32;
+//    SmokeDetector* smoky = new SmokeDetector;
+//    smoky->name = "smoky";
+//    smoky->smokeLevel = 32;
 
-    TemperatureDetector temp;
-    temp.name = "temp";
+//    TemperatureDetector* temp = new TemperatureDetector;
+//    temp->name = "temp";
 
-//    checkDetector(ris);
-    std::cout << "-------------------\n";
-    checkDetector(leake);
-    std::cout << "-------------------\n";
-    checkDetector(smoky);
-    std::cout << "-------------------\n";
-    checkDetector(temp);
+//    std::cout << "-------------------\n";
+//    checkDetector(leake);
+//    std::cout << "-------------------\n";
+//    checkDetector(smoky);
+//    std::cout << "-------------------\n";
+//    checkDetector(temp);
+
+//    delete leake;
+//    delete smoky;
+//    delete temp;
+
+    Home* stepnoy11 = new Home();
+    stepnoy11->name = "stepnoy11";
+    stepnoy11->addDeviceLeake();
+
+
 
     return 0;
 }
