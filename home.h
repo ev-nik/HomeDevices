@@ -15,7 +15,6 @@
 class Home
 {
 public:
-
     Home();
     ~Home();
 
@@ -26,6 +25,12 @@ public:
     void addDeviceLeake();
     void addDeviceSmoke();
     void addDeviceTemperature();
+
+    void deleteLeakeDetector();
+    void deleteSmokeDetector();
+    void deleteTemperatureDetector();
+
+    void printHomeDetector();
 };
 
 #endif // HOME_H

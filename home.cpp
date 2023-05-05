@@ -20,7 +20,7 @@ Home::~Home()
     }
 }
 
-// Добавляем датчик в дом
+// Добавляем датчик протечки в дом.
 void Home::addDeviceLeake()
 {
     LeakDetector* leake = new LeakDetector();
@@ -30,6 +30,25 @@ void Home::addDeviceLeake()
     homeDetector.push_back(leake);
 }
 
+// Удаляем датчик протечки из дома.
+void Home::deleteLeakeDetector()
+{
+    for(size_t i = 0; i < homeDetector.size(); i++)
+    {
+        Device* d = homeDetector[i];
+        LeakDetector* l = dynamic_cast<LeakDetector*>(d);
+
+        if(l != nullptr)
+        {
+            delete l;
+            std::vector<Device*>::iterator it = homeDetector.begin() + i;
+            homeDetector.erase(it);
+            i--;
+        }
+    }
+}
+
+// Добавляем датчик дыма в дом.
 void Home::addDeviceSmoke()
 {
     SmokeDetector* smoke = new SmokeDetector();
@@ -39,6 +58,25 @@ void Home::addDeviceSmoke()
     homeDetector.push_back(smoke);
 }
 
+// Удаляем датчик дыма из дома.
+void Home::deleteSmokeDetector()
+{
+    for(size_t i = 0; i < homeDetector.size(); i++)
+    {
+        Device* d = homeDetector[i];
+        SmokeDetector* s = dynamic_cast<SmokeDetector*>(d);
+
+        if(s != nullptr)
+        {
+            delete s;
+            std::vector<Device*>::iterator it = homeDetector.begin() + i;
+            homeDetector.erase(it);
+            i--;
+        }
+    }
+}
+
+// Добавляем датчик температуры в дом.
 void Home::addDeviceTemperature()
 {
     TemperatureDetector* temperature = new TemperatureDetector();
@@ -48,6 +86,31 @@ void Home::addDeviceTemperature()
     homeDetector.push_back(temperature);
 }
 
+// Удаляем датчик температуры из дома.
+void Home::deleteTemperatureDetector()
+{
+    for(size_t i = 0; i < homeDetector.size(); i++)
+    {
+        Device* d = homeDetector[i];
+        TemperatureDetector* t = dynamic_cast<TemperatureDetector*>(d);
 
+        if(t != nullptr)
+        {
+            delete t;
+            std::vector<Device*>::iterator it = homeDetector.begin() + i;
+            homeDetector.erase(it);
+            i--;
+        }
+    }
+}
 
-
+void Home::printHomeDetector()
+{
+    for(size_t i = 0; i < homeDetector.size(); i++)
+    {
+        Device* d = homeDetector[i];
+        d->deviced();
+        d->infoDetector();
+        std::cout << "\n";
+    }
+}

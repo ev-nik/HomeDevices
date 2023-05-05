@@ -15,6 +15,7 @@ void checkDetector(Device* d)
 }
 
 
+
 int main()
 {
     //Нельзя создать объект абстрактного класса
@@ -51,9 +52,16 @@ int main()
 
     Home* stepnoy11 = new Home();
     stepnoy11->name = "stepnoy11";
+
+    stepnoy11->addDeviceSmoke();
+    stepnoy11->addDeviceTemperature();
     stepnoy11->addDeviceLeake();
 
+    stepnoy11->printHomeDetector();
 
+    stepnoy11->deleteSmokeDetector();
+    stepnoy11->deleteTemperatureDetector();
+    stepnoy11->deleteLeakeDetector();
 
     return 0;
 }
